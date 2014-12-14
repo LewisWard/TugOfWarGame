@@ -14,7 +14,7 @@ struct vec2
 	float x; ///< x component
 	float y; ///< y component
 
-	// no default constructor to set variables to zero, as you should be using one of the two below.
+	vec2() : x(0.0f), y(0.0f) {}; ///< sets all to zero
 	vec2(float i) : x(i), y(i) {}; ///< sets both x and y to the same value 
 	vec2(float a, float b) : x(a), y(b) {}; ///< sets x and y to differnet values
 

@@ -13,7 +13,7 @@ struct vec3
 	float y; ///< y component
 	float z; ///< z component
 
-	// no default constructor to set variables to zero, use one of the ones below.
+	vec3() : x(0.0f), y(0.0f), z(0.0f) {}; ///< sets all to zero
 	vec3(float i) : x(i), y(i), z(i) {}; ///< sets x, y and z to the same value 
 	vec3(float a, float b, float c) : x(a), y(b), z(c) {}; ///< sets x, y and z to differnet values
 	vec3(vec2 v) : x(v.x), y(v.y), z(0.0f) {}; ///< takes a vec2 for x and y and sets z to zero
