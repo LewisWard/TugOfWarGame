@@ -2,6 +2,8 @@
 // program: PGAG Assignment 1
 // date   : 17/11/2014
 #pragma once
+#define GLEW_STATIC
+#include "gl/glew.h"
 #include <SDL.h>
 #include <SDL_opengl.h>
 #include <iostream>
@@ -9,10 +11,15 @@
 #include "Vec3.h"
 
 //----------------------------------------------------------------------------------------------------------------------
-/// \brief  SDLinitialisation
+/// \brief  SDL initialisation
 /// \return bool true if SDL initialisation was susscessful
 //----------------------------------------------------------------------------------------------------------------------
 bool initSDL();
+//----------------------------------------------------------------------------------------------------------------------
+/// \brief  GLEW initialisation
+/// \return bool true if Glew initialisation was susscessful
+//----------------------------------------------------------------------------------------------------------------------
+bool initGlew();
 
 //----------------------------------------------------------------------------------------------------------------------
 /// \brief  Delta Time 

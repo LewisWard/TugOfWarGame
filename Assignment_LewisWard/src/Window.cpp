@@ -15,6 +15,21 @@ bool initSDL()
 	// initialisation susscessful
 	return true;
 }
+bool initGlew()
+{
+	// turn on glew experimental mode
+	glewExperimental = GL_TRUE;
+	// initialisation of glew
+	GLenum error = glewInit();
+	if(GLEW_OK != error)
+	{
+		// if there was an error
+		std::cout<<"Error: GLEW failed\n";
+		return false;
+	}
+	return true;
+}
+
 
 // Delta Time based upon link below: 
 // http://phstudios.com/forums/index.php?/topic/175-c-directx-tutorial-tutorial-5-high-performance-timing-and-device-handling/
