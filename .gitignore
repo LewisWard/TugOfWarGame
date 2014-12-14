@@ -5,3 +5,6 @@
 /Assignment_LewisWard/docs
 /docTools
 /Assignment_LewisWard/src/GL
+/Assignment_LewisWard/src/glew.c
+/Assignment_LewisWard/include/gl/glew.h
+/Assignment_LewisWard/include/gl/wglew.h
