@@ -100,9 +100,9 @@ Window::~Window()
 }
 void Window::setTitle(const char* title)
 {
-
+	SDL_SetWindowTitle(m_windowSDL, title);
 }
 void Window::setIcon(SDL_Surface* icon)
 {
-
+	SDL_SetWindowIcon(m_windowSDL, icon);
 }
