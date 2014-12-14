@@ -11,26 +11,63 @@ EventHandler::~EventHandler()
 {
 
 }
-void EventHandler::update()
+int EventHandler::update()
 {
 	// process SDL events
 	while(SDL_PollEvent(&m_event))
 	{
 		switch(m_event.type)
 		{
-		case SDL_WINDOWEVENT: std::cout<<"SDL_WINDOWEVENT\n";
+		case SDL_WINDOWEVENT:
 			break;
-		case SDL_KEYDOWN: std::cout<<"SDL_KEYDOWN\n";
+		case SDL_KEYDOWN:
+				if(SDLK_0 == m_event.key.keysym.sym)
+				{std::cout<<"Pressed: 0\n"; return k0;}
+				if(SDLK_1 == m_event.key.keysym.sym)
+				{std::cout<<"Pressed: 1\n"; return k1;}
+				if(SDLK_2 == m_event.key.keysym.sym)
+				{std::cout<<"Pressed: 2\n"; return k2;}
+				if(SDLK_3 == m_event.key.keysym.sym)
+				{std::cout<<"Pressed: 3\n"; return k3;}
+				if(SDLK_4 == m_event.key.keysym.sym)
+				{std::cout<<"Pressed: 4\n"; return k4;}
+				if(SDLK_5 == m_event.key.keysym.sym)
+				{std::cout<<"Pressed: 5\n"; return k5;}
+				if(SDLK_6 == m_event.key.keysym.sym)
+				{std::cout<<"Pressed: 6\n"; return k6;}
+				if(SDLK_7 == m_event.key.keysym.sym)
+				{std::cout<<"Pressed: 7\n"; return k7;}
+				if(SDLK_8 == m_event.key.keysym.sym)
+				{std::cout<<"Pressed: 8\n"; return k8;}
+				if(SDLK_9 == m_event.key.keysym.sym)
+				{std::cout<<"Pressed: 9\n"; return k9;}
+				if(SDLK_q == m_event.key.keysym.sym)
+				{std::cout<<"Pressed: Q\n"; return kQ;}
+				if(SDLK_w == m_event.key.keysym.sym)
+				{std::cout<<"Pressed: W\n"; return kW;}
+				if(SDLK_e == m_event.key.keysym.sym)
+				{std::cout<<"Pressed: E\n"; return kE;}
+				if(SDLK_a == m_event.key.keysym.sym)
+				{std::cout<<"Pressed: A\n"; return kA;}
+				if(SDLK_s == m_event.key.keysym.sym)
+				{std::cout<<"Pressed: S\n"; return kS;}
+				if(SDLK_d == m_event.key.keysym.sym)
+				{std::cout<<"Pressed: D\n"; return kD;}
+				if(SDLK_SPACE == m_event.key.keysym.sym)
+				{std::cout<<"Pressed: Space\n"; return kSpace;}
+
+				// key that I'm not worried about has been pressed
+				return kNONE;
 			break;
-		case SDL_KEYUP: std::cout<<"SDL_KEYUP\n";
+		case SDL_KEYUP:
 			break;
-		case SDL_MOUSEMOTION: std::cout<<"SDL_MOUSEMOTION\n";
+		case SDL_MOUSEMOTION:
 			break;
-		case SDL_MOUSEBUTTONDOWN: std::cout<<"SDL_MOUSEBUTTONDOWN\n";
+		case SDL_MOUSEBUTTONDOWN:
 			break;
-		case SDL_MOUSEBUTTONUP: std::cout<<"SDL_MOUSEBUTTONUP\n";
+		case SDL_MOUSEBUTTONUP:
 			break;
-		case SDL_MOUSEWHEEL: std::cout<<"SDL_MOUSEWHEEL\n";
+		case SDL_MOUSEWHEEL:
 			break;
 		case SDL_QUIT: m_playState = false; ///< quit window/program
 			break;

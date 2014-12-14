@@ -4,6 +4,17 @@
 #pragma once
 #include "Window.h"
 
+// all the events that I require
+enum events
+{
+	kNONE, k0, k1, k2, k3, k4, k5, k6, k7, k8, k9, ///< nothing pressed and 0->9 keys
+	kQ, kW, kE, kA, kS, kD, ///< Q/W/E/A/S/D
+	kSpace, ///< Space bar 
+};
+
+//----------------------------------------------------------------------------------------------------------------------
+/// \brief  Handles all input events
+//----------------------------------------------------------------------------------------------------------------------
 class EventHandler
 {
 public:
@@ -13,7 +24,8 @@ public:
 	~EventHandler();
 
 	///\brief update events
-	void update();
+	///\return int the event code (see events enum)
+	int update();
 
 	///\brief get the play state
 	///\prama bool false to quit program
