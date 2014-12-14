@@ -19,6 +19,8 @@ int main(int argc, char *argv[])
 	// create event handler
 	EventHandler events;
 
+	initGlew();
+
 	// stores delta time
 	float dt;
 
@@ -29,7 +31,8 @@ int main(int argc, char *argv[])
 		dt = updateTimerDT();
 
 		// update SDL events
-		events.update();
+		int i = events.update();
+		if(i > 0) std::cout<<i<<"\n";
 		// has the user clicked on the quit button
 		gameloop = events.playState();
 
