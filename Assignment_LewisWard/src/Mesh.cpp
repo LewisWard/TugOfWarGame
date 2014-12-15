@@ -33,8 +33,8 @@ Mesh::Mesh(const char* meshFile)
 		for(size_t i = 0; i < m_vertexData.size(); ++i)
 		{
 			fileStream >> m_vertexData[i].vertex.x >> m_vertexData[i].vertex.y >> m_vertexData[i].vertex.z // vertex
-								 >> m_vertexData[i].normal.x >> m_vertexData[i].normal.y >> m_vertexData[i].normal.z // normal
-								 >> m_vertexData[i].uv.x >> m_vertexData[i].uv.y; // UV
+					   >> m_vertexData[i].normal.x >> m_vertexData[i].normal.y >> m_vertexData[i].normal.z // normal
+					   >> m_vertexData[i].uv.x >> m_vertexData[i].uv.y; // UV
 		}
 		// read indices into vector
 		for(size_t i = 0; i < m_indices.size(); ++i)

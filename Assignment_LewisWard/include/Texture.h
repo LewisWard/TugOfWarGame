@@ -8,23 +8,23 @@
 // some useful structures
 struct vert
 {
-	vec3 vertex;
+	math::vec3 vertex;
 };
 struct vertNormal
 {
-	vec3 vertex;
-	vec3 normal;
+	math::vec3 vertex;
+	math::vec3 normal;
 };
 struct vertUV
 {
-	vec3 vertex;
-	vec2 uv;
+	math::vec3 vertex;
+	math::vec2 uv;
 };
 struct vertNormalUV
 {
-	vec3 vertex;
-	vec3 normal;
-	vec2 uv;
+	math::vec3 vertex;
+	math::vec3 normal;
+	math::vec2 uv;
 };
 
 //----------------------------------------------------------------------------------------------------------------------
