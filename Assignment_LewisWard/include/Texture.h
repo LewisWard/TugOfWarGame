@@ -3,7 +3,7 @@
 // date   : 13/12/2014
 #pragma once
 #include "Window.h"
-#include "Vec3.h"
+#include "Mat3.h"
 
 // some useful structures
 struct vert
@@ -45,3 +45,4 @@ public:
 private:
 	uint32_t m_texture;
 };
+
