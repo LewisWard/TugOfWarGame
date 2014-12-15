@@ -23,33 +23,33 @@ struct vec2
 
 	// operator overloading
 	// EQUALS
-	inline const vec2 operator = (vec2 a)
+	inline const vec2 operator = (vec2& a)
 	{
 		x = a.x; y = a.y; return *this;
 	}
 	// ADD EQUALS
-	inline const vec2 operator += (vec2 a)
+	inline const vec2 operator += (vec2& a)
 	{
 		x += a.x; y += a.y; return *this;
 	}
 	// SUB EQUALS
-	inline const vec2 operator -= (vec2 a)
+	inline const vec2 operator -= (vec2& a)
 	{
 		x -= a.x; y -= a.y; return *this;
 	}
 	// TIMES EQUALS
-	inline const vec2 operator *= (vec2 a)
+	inline const vec2 operator *= (vec2& a)
 	{
 		x *= a.x; y *= a.y; return *this;
 	}
 	// DIVIDE EQUALS
-	inline const vec2 operator /= (vec2 a)
+	inline const vec2 operator /= (vec2& a)
 	{
 		x /= a.x; y /= a.y; return *this;
 	}
 };
 // add two vectors together
-inline vec2 operator + (vec2 a, vec2 b)
+inline vec2 operator + (vec2& a, vec2& b)
 {
 	vec2 temp(0.0f);
 	temp.x = a.x + b.x;
@@ -57,7 +57,7 @@ inline vec2 operator + (vec2 a, vec2 b)
 	return temp;
 }
 // subtract two vectors
-inline vec2 operator - (vec2 a, vec2 b)
+inline vec2 operator - (vec2& a, vec2& b)
 {
 	vec2 temp(0.0f);
 	temp.x = a.x - b.x;
@@ -65,7 +65,7 @@ inline vec2 operator - (vec2 a, vec2 b)
 	return temp;
 }
 // multiplies vector by float (scalar)
-inline vec2 operator * (vec2 a, float s)
+inline vec2 operator * (vec2& a, float s)
 {
 	vec2 temp(0.0f);
 	temp.x = a.x * s;
@@ -73,7 +73,7 @@ inline vec2 operator * (vec2 a, float s)
 	return temp;
 }
 // multiplies float (scalar) by vector
-inline vec2 operator * (float s, vec2 a)
+inline vec2 operator * (float s, vec2& a)
 {
 	vec2 temp(0.0f);
 	temp.x = a.x * s;
@@ -81,7 +81,7 @@ inline vec2 operator * (float s, vec2 a)
 	return temp;
 }
 // divides vector by float (scalar)
-inline vec2 operator / (vec2 a, float s)
+inline vec2 operator / (vec2& a, float s)
 {
 	vec2 temp(0.0f);
 	temp.x = a.x / s;
@@ -89,17 +89,17 @@ inline vec2 operator / (vec2 a, float s)
 	return temp;
 }
 // dot product of two vectors, if you enter the same vector for both parameters you will get the squared length
-inline float dot(vec2 a, vec2 b)
+inline float dot(const vec2& a, const vec2& b)
 {
 	return (a.x * b.x) + (a.y * b.y);
 }
 // the length of a vector
-inline float length(vec2 a)
+inline float length(const vec2& a)
 {
 	return std::sqrt(dot(a, a));
 }
 // normalize the vector to a unit length
-inline vec2 normalize(vec2 a)
+inline vec2 normalize(vec2& a)
 {
 	// get the length of the vector
 	float l = length(a);
