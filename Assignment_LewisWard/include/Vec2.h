@@ -47,6 +47,21 @@ struct vec2
 	{
 		x /= a.x; y /= a.y; return *this;
 	}
+	// add vectors together
+	inline vec2 operator + (vec2 a) const
+	{
+		return vec2(x + a.x, y + a.y);
+	}
+	// subtract vectors together
+	inline vec2 operator - (vec2 a) const
+	{
+		return vec2(x - a.x, y + a.y);
+	}
+	// times vectors together
+	inline vec2 operator * (vec2 a) const
+	{
+		return vec2(x * a.x, y * a.y);
+	}
 };
 // add two vectors together
 inline vec2 operator + (vec2& a, vec2& b)
