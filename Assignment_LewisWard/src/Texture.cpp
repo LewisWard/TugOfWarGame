@@ -11,7 +11,7 @@ Texture::Texture(const char* texture)
 	glBindTexture(GL_TEXTURE_2D, m_texture);
 	// texture data
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imageSurface->w, imageSurface->h, 0,
-							 GL_RGB, GL_UNSIGNED_BYTE, imageSurface->pixels);
+							 GL_BGR, GL_UNSIGNED_BYTE, imageSurface->pixels);
 	// texture parameters
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);

@@ -41,6 +41,8 @@ public:
 	{ glBindTexture(GL_TEXTURE_2D, m_texture); }
 	inline void unbind()
 	{ glBindTexture(GL_TEXTURE_2D, 0); }
+	inline uint32_t texture()
+	{ return m_texture; }
 
 private:
 	uint32_t m_texture;
