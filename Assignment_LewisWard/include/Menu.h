@@ -1,6 +1,6 @@
 // author : Lewis Ward
 // program: PGAG Assignment 1
-// date   : 14/12/2014
+// date   : 16/12/2014
 #pragma once
 #include "Button.h"
 #include "Window.h"
@@ -19,6 +19,8 @@ public:
 
 	Menu(uint32_t texture) : m_texture(texture) {};
 	~Menu();
+
+	int clickButton(math::vec2 mouse);
 
 	void bind() const;
 
@@ -46,6 +48,8 @@ public:
 	~Menus();
 
 	void draw() const;
+
+	int buttonClickedUpdate(math::vec2& mouse);
 
 	inline void addMenu(Menu m)
 	{ m_menus.push_back(m); }

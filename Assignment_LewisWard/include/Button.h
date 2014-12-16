@@ -1,6 +1,6 @@
 // author : Lewis Ward
 // program: PGAG Assignment 1
-// date   : 14/12/2014
+// date   : 16/12/2014
 #pragma once
 #include "Vec3.h"
 
@@ -14,17 +14,19 @@ class Button
 {
 public:
 	
-	Button(math::vec3 origin, math::vec3 end) : m_o(origin), m_e(end) {};
+	Button(math::vec2 origin, math::vec2 end) : m_o(origin), m_e(end) {};
 
-	inline math::vec3 origin()
+	bool clicked(math::vec2 mouse);
+
+	inline math::vec2 origin()
 	{ return m_o; }
 
-	inline math::vec3 end()
+	inline math::vec2 end()
 	{ return m_e; }
 
 private:
-	math::vec3 m_o; ///< origin
-	math::vec3 m_e; ///< end
+	math::vec2 m_o; ///< origin
+	math::vec2 m_e; ///< end
 };
 
 }; /// end of namespace gui

@@ -10,6 +10,22 @@ Menu::~Menu()
 {
 
 }
+int Menu::clickButton(math::vec2 mouse)
+{
+	bool test;
+	// go over each button on the menu
+	for (size_t i = 0; i < m_buttons.size(); ++i)
+	{
+		// test each button to see if its been clicked on
+		test = m_buttons[i].clicked(mouse);
+		if (test)
+		{
+			// return the button idex
+			return i;
+		}
+		return 100; ///< never going to have 100 buttons 
+	}
+}
 void Menu::bind() const
 {
 	glBindTexture(GL_TEXTURE_2D, m_texture);
@@ -85,7 +101,12 @@ Menus::~Menus()
 	glDeleteBuffers(1, &m_vbo);
 	glDeleteBuffers(1, &m_ibo);
 }
-
+int Menus::buttonClickedUpdate(math::vec2& mouse)
+{
+	// test menu to see if a button has been pressed
+	int index = m_menus[m_active].clickButton(mouse);
+	return index;
+}
 void Menus::draw() const
 {
 	// bind texture

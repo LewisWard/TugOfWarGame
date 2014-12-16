@@ -62,10 +62,50 @@ int EventHandler::update()
 		case SDL_KEYUP:
 			break;
 		case SDL_MOUSEMOTION:
+			// update mouse position
+			m_mouse.x = m_event.motion.x;
+			m_mouse.y = m_event.motion.y;
 			break;
 		case SDL_MOUSEBUTTONDOWN:
+			if (SDL_BUTTON_LEFT == m_event.button.button)
+			{
+				std::cout << "Mouse Pressed: Left\n";
+				return kMDL;
+			}
+			if (SDL_BUTTON_MIDDLE == m_event.button.button)
+			{
+				std::cout << "Mouse Pressed: Middle\n";
+				return kMDM;
+			}
+			if (SDL_BUTTON_RIGHT == m_event.button.button)
+			{
+				std::cout << "Mouse Pressed: Right\n";
+				return kMDR;
+			}
 			break;
 		case SDL_MOUSEBUTTONUP:
+			// mouse buttons released
+			if (SDL_BUTTON_LEFT)
+			{
+				std::cout << "Mouse Released: Left\n";
+				m_mouse.x = m_event.motion.x;
+				m_mouse.y = m_event.motion.y;
+				return kMUL;
+			}
+			if (SDL_BUTTON_MIDDLE)
+			{
+				std::cout << "Mouse Released: Middle\n";
+				m_mouse.x = m_event.motion.x;
+				m_mouse.y = m_event.motion.y;
+				return kMUM;
+			}
+			if (SDL_BUTTON_RIGHT)
+			{
+				std::cout << "Mouse Released: Right\n";
+				m_mouse.x = m_event.motion.x;
+				m_mouse.y = m_event.motion.y;
+				return kMUR;
+			}
 			break;
 		case SDL_MOUSEWHEEL:
 			break;

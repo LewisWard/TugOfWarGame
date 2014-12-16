@@ -33,6 +33,10 @@ int main(int argc, char *argv[])
 	Texture texture("images/image.bmp");
 
 	gui::Menu mainMenu(texture.texture());
+	math::vec2 origin(0.0f, 0.0f);
+	math::vec2 end(250.0f, 250.0f);
+	gui::Button button(origin, end);
+	mainMenu.addButton(button);
 	gui::Menus menus(mainMenu);
 
 	// create event handler
@@ -48,11 +52,20 @@ int main(int argc, char *argv[])
 		dt = updateTimerDT();
 
 		// update SDL events
-		int i = events.update();
-		if(i > 0) std::cout<<i<<"\n";
+		int eventCode = events.update();
 		// has the user clicked on the quit button
 		gameloop = events.playState();
-
+		// update the mouse
+		math::vec2 newMouse = events.mouseUpdate();
+		// if left mouse pressed
+		if (eventCode == kMDL)
+		{
+			// find out which button was pressed
+			int pressed = menus.buttonClickedUpdate(newMouse);
+			// if it was pressed print result to comsole
+			if (pressed == 0) std::cout << "button clicked\n";
+		}
+	
 		// clear the colour and depth buffer
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
