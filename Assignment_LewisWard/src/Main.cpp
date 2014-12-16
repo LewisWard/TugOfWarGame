@@ -2,24 +2,41 @@
 // program: PGAG Assignment 1
 // date   : 17/11/2014
 #include "Events.h"
-
-// TODO:
-// setTitle & setIcon
+#include "gl/Program.h"
+#include "Mesh.h"
+#include "Menu.h"
 
 int main(int argc, char *argv[])
 {
 	// gameloop when false will quit the program
 	bool gameloop = initSDL();
-
 	// setup delta time
 	initTimerDT();
-
 	// create win
-	Window win;
+	Window window;
+	// set window title
+	window.setTitle("Lewis Ward's Game");
+	// setup Glew
+	initGlew();
+
+	// enable OpenGL 2D textures
+	glEnable(GL_TEXTURE_2D);
+
+
+	// create shaders
+	gls::Shader vertexShader("shaders/menu.vtx.glsl", gls::sVERTEX);
+	gls::Shader fragmentShader("shaders/menu.pix.glsl", gls::sFRAGMENT);
+	// create program
+	gls::Program program;
+	program.create(&vertexShader, &fragmentShader);
+	// load texture
+	Texture texture("images/image.bmp");
+
+	gui::Menu mainMenu(texture.texture());
+	gui::Menus menus(mainMenu);
+
 	// create event handler
 	EventHandler events;
-
-	initGlew();
 
 	// stores delta time
 	float dt;
@@ -39,20 +56,25 @@ int main(int argc, char *argv[])
 		// clear the colour and depth buffer
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		// draw simple triangle with OpenGL
-		glBegin(GL_TRIANGLES);
-			glColor3f(0.0f, 0.0f, 1.0f);
-			glVertex3f(300.0f, 100.0f, 0.0f);
-			glColor3f(0.0f, 1.0f, 0.0f);
-			glVertex3f(100.0f, 400.0f, 0.0f);
-			glColor3f(1.0f, 0.0f, 0.0f);
-			glVertex3f(500.0f, 400.0f, 0.0f);
-		glEnd();
+		// bind program
+		program.bind();
+			// draw menu
+			menus.draw();
+		// unbind program and texture
+		program.unbind();
 
 		// swap the SDL window (SDL's version of glutSwapBuffer)
-		SDL_GL_SwapWindow(win.getWindow());
+		SDL_GL_SwapWindow(window.getWindow());
 	}
 
+	menus.~Menus();
+	// delete shaders
+	vertexShader.~Shader();
+	fragmentShader.~Shader();
+	// delete program
+	program.~Program();
+	// delete window
+	window.~Window();
 	// quit SDL
 	SDL_Quit();
 	// quit program
