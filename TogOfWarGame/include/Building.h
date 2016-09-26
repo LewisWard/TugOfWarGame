@@ -1,6 +1,7 @@
 // author : Lewis Ward
-// program: PGAG Assignment 1
+// program: Tog Of War Game
 // date   : 17/01/2015
+// © 2016 Lewis Ward. All rights reserved.
 #pragma once
 #include "Mesh.h"
 

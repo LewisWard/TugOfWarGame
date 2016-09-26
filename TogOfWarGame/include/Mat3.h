@@ -1,6 +1,7 @@
 // author : Lewis Ward
-// program: PGAG Assignment 1
+// program: Tog Of War Game
 // date   : 14/12/2014
+// © 2016 Lewis Ward. All rights reserved.
 #pragma once
 #include "Mat2.h"
 

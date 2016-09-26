@@ -1,6 +1,7 @@
 // author : Lewis Ward
-// program: PGAG Assignment 1
+// program: Tog Of War Game
 // date   : 18/11/2014
+// © 2016 Lewis Ward. All rights reserved.
 #include "Sound.h"
 
 // some of the setup based upon code found here : http://www.lazyfoo.net/SDL_tutorials/lesson11/index.php

@@ -1,3 +1,7 @@
+// author : Lewis Ward
+// program: Tog Of War Game
+// date   : 13/12/2014
+// © 2016 Lewis Ward. All rights reserved.
 #include "Texture.h"
 
 Texture::Texture(const char* texture)
