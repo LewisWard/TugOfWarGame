@@ -1,4 +1,4 @@
-// author : Lewis Ward
+// author : Lewis Ward (http://www.lewis-ward.com)
 // program: Tug Of War Game
 // date   : 14/12/2014
 #pragma once

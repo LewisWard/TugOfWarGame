@@ -1,4 +1,4 @@
-// author : Lewis Ward
+// author : Lewis Ward (http://www.lewis-ward.com)
 // program: Tug Of War Game
 // date   : 17/11/2014
 // © 2016 Lewis Ward. All rights reserved.
