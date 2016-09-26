@@ -1,4 +1,4 @@
-# README #
+# Tug Of War README #
 © 2015 - 2016 Lewis Ward. All rights reserved.
 
 A small game I created in SDL for a University project. For more details go to [http://www.lewis-ward.com/tog-of-war.html](Link URL)
@@ -18,7 +18,7 @@ This can be accessed in-game via the main menu.
 
 ### How do I get set up? ###
 
-Some Visual Studio files have been included in the project, run "TogOfWarGame.sln", you can build the project in either Debug or Release (Win32) and after the code has been compiled you should be all set up.
+Some Visual Studio files have been included in the project, run "TugOfWarGame.sln", you can build the project in either Debug or Release (Win32) and after the code has been compiled you should be all set up.
 
 
 ### Who do I talk to? ###
