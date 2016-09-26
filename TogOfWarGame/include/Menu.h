@@ -17,28 +17,39 @@ namespace gui
 class Menu
 {
 public:
-	///\brief Constructor creates a menu
-	///\prama uint32_t texutre
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief Constructor creates a menu
+	/// \parma uint32_t texutre
+	//----------------------------------------------------------------------------------------------------------------------
 	Menu(uint32_t texture);
-	///\brief Destructor
+
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief Destructor
+	//----------------------------------------------------------------------------------------------------------------------
 	~Menu();
 
-	///\brief draw the menu
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief draw the menu
+	//----------------------------------------------------------------------------------------------------------------------
 	void draw();
 
-	///\brief detects if the button was clicked on
-	///\prama math::vec2 mouse position
-	///\return int button index (if not 100 a button was pressed)
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief detects if the button was clicked on
+	/// \parma math::vec2 mouse position
+	/// \return int button index (if not 100 a button was pressed)
+	//----------------------------------------------------------------------------------------------------------------------
 	int clickButton(math::vec2 mouse);
 
-	///\brief Adds a new button to the menu
-	///\prama Button
-	inline void addButton(Button b)
-	{ m_buttons.push_back(b); }
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief Adds a new button to the menu
+	/// \parma Button
+	//----------------------------------------------------------------------------------------------------------------------
+	inline void addButton(Button b) { m_buttons.push_back(b); }
 
-	///\brief Removed last button added to the menu
-	inline void deleteButton()
-	{ m_buttons.pop_back(); }
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief Removed last button added to the menu
+	//----------------------------------------------------------------------------------------------------------------------
+	inline void deleteButton() { m_buttons.pop_back(); }
 
 private:
 	std::vector<Button> m_buttons; ///< buttons on menu

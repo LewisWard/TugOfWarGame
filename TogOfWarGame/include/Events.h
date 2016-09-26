@@ -19,24 +19,33 @@ enum events
 class EventHandler
 {
 public:
-	///\brief Constructor
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief Constructor
+	//----------------------------------------------------------------------------------------------------------------------
 	EventHandler();
-	///\brief Destructor
+
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief Destructor
+	//----------------------------------------------------------------------------------------------------------------------
 	~EventHandler();
 
-	///\brief update events
-	///\return int the event code (see events enum)
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief update events
+	/// \return int the event code (see events enum)
+	//----------------------------------------------------------------------------------------------------------------------
 	int update();
 
-	///\brief get the play state
-	///\prama bool false to quit program
-	inline bool playState()
-	{ return m_playState; }
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief get the play state
+	/// \parma bool false to quit program
+	//----------------------------------------------------------------------------------------------------------------------
+	inline bool playState() { return m_playState; }
 
-	///\brief update mouse position
-	///\return math::vec2 new mouse position
-	inline math::vec2 mouseUpdate()
-	{ return m_mouse; }
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief update mouse position
+	/// \return math::vec2 new mouse position
+	//----------------------------------------------------------------------------------------------------------------------
+	inline math::vec2 mouseUpdate() { return m_mouse; }
 
 private:
 	SDL_Event m_event;

@@ -6,13 +6,13 @@
 #include "Mat3.h"
 
 // some useful structures
-///\brief vertex data (math::vec3, math::vec2)
+/// \brief vertex data (math::vec3, math::vec2)
 struct vertUV
 {
 	math::vec3 vertex;
 	math::vec2 uv;
 };
-///\brief vertex data (math::vec3, math::vec3, math::vec2)
+/// \brief vertex data (math::vec3, math::vec3, math::vec2)
 struct vertNormalUV
 {
 	math::vec3 vertex;
@@ -26,22 +26,32 @@ struct vertNormalUV
 class Texture
 {
 public:
-	///\brief Constructor
-	///\prama const char* texture file name
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief Constructor
+	/// \parma const char* texture file name
+	//----------------------------------------------------------------------------------------------------------------------
 	Texture(const char* texture);
-	///\brief Destructor
+
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief Destructor
+	//----------------------------------------------------------------------------------------------------------------------
 	~Texture();
 	
-	///\brief bind the texture
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief bind the texture
+	//----------------------------------------------------------------------------------------------------------------------
 	void bind(int slot);
 
-	///\brief unbind the texture
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief unbind the texture
+	//----------------------------------------------------------------------------------------------------------------------
 	void unbind();
 
-	///\brief get the texture
-	///\return uint32_t
-	inline uint32_t texture()
-	{ return m_texture; }
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief get the texture
+	/// \return uint32_t
+	//----------------------------------------------------------------------------------------------------------------------
+	inline uint32_t texture() { return m_texture; }
 
 private:
 	uint32_t m_texture; ///< texture

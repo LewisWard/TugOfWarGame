@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 	// create window
 	Window window;
 	// set window title
-	window.setTitle("Lewis Ward's Game");
+	window.setTitle("Tog Of War - by Lewis Ward");
 	// setup Glew
 	initGlew();
 
@@ -932,7 +932,7 @@ int main(int argc, char *argv[])
 		goblin[i]->~Sprite();
 		unitGoblin[i]->~Unit();
 	}
-	backgroundMusic.~Sound();
+	
 	goblin.clear();
 	unitGoblin.clear();
 	bases[0]->~Building();

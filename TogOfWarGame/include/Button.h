@@ -13,14 +13,18 @@ namespace gui
 class Button
 {
 public:
-	///\brief Constructor
-	///\prama math::vec2 start of the button
-	///\prama math::vec2 end of the button
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief Constructor
+	/// \parma math::vec2 start of the button
+	/// \parma math::vec2 end of the button
+	//----------------------------------------------------------------------------------------------------------------------
 	Button(math::vec2 origin, math::vec2 end) : m_o(origin), m_e(end) {};
 
-	///\brief detects if the button was clicked on
-	///\prama math::vec2 smouse position
-	///\return bool button was clicked on or not
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief detects if the button was clicked on
+	/// \parma math::vec2 smouse position
+	/// \return bool button was clicked on or not
+	//----------------------------------------------------------------------------------------------------------------------
 	bool clicked(math::vec2 mouse);
 
 private:

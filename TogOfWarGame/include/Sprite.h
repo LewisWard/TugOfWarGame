@@ -12,70 +12,98 @@
 class Sprite
 {
 public:
-	///\brief Constructor
-	///\prama const char* texture file name
-	///\prama float size in X 
-	///\prama float size in Y 
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief Constructor
+	/// \parma const char* texture file name
+	/// \parma float size in X 
+	/// \parma float size in Y 
+	//----------------------------------------------------------------------------------------------------------------------
 	Sprite(const char* textureFile, float x_size, float y_size);
-	///\brief Constructor
-	///\prama const char* texture file name
-	///\prama float size in X 
-	///\prama float size in Y 
-	///\prama float height of animation sheet 
-	///\prama float width of animation sheet 
-	///\prama vector<float> animation cycles
+
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief Constructor
+	/// \parma const char* texture file name
+	/// \parma float size in X 
+	/// \parma float size in Y 
+	/// \parma float height of animation sheet 
+	/// \parma float width of animation sheet 
+	/// \parma vector<float> animation cycles
+	//----------------------------------------------------------------------------------------------------------------------
 	Sprite(const char* textureFile, float x_size, float y_size, float& h, float& w, std::vector<float> frameCount);
-	///\brief Constructor
-	///\prama Texture texture
-	///\prama float size in X 
-	///\prama float size in Y 
-	///\prama float height of animation sheet 
-	///\prama float width of animation sheet 
-	///\prama vector<float> animation cycles
+
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief Constructor
+	/// \parma Texture texture
+	/// \parma float size in X 
+	/// \parma float size in Y 
+	/// \parma float height of animation sheet 
+	/// \parma float width of animation sheet 
+	/// \parma vector<float> animation cycles
+	//----------------------------------------------------------------------------------------------------------------------
 	Sprite(Texture& texture, float x_size, float y_size, float& h, float& w, std::vector<float> frameCount);
-	///\brief Destructor
+
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief Destructor
+	//----------------------------------------------------------------------------------------------------------------------
 	~Sprite();
 
-	///\brief draw the sprite
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief draw the sprite
+	//----------------------------------------------------------------------------------------------------------------------
 	void draw();
 
-	///\brief update the sprite
-	///\prama float Delta Time
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief update the sprite
+	/// \parma float Delta Time
+	//----------------------------------------------------------------------------------------------------------------------
 	void update(float dt);
-	///\brief update the sprite
-	///\prama float Delta Time
-	///\prama math::Mat3 martix
+
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief update the sprite
+	/// \parma float Delta Time
+	/// \parma math::Mat3 martix
+	//----------------------------------------------------------------------------------------------------------------------
 	void update(float dt, math::Mat3 matrix);
 
-	///\brief unbind the sprite
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief unbind the sprite
+	//----------------------------------------------------------------------------------------------------------------------
 	void bindSprite();
-	///\brief unbind the sprite
+
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief unbind the sprite
+	//----------------------------------------------------------------------------------------------------------------------
 	void unbindSprite();
 
-	///\brief set the sprite state
-	///\prama int state
-	inline void state(int s)
-	{ m_state = s; }
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief set the sprite state
+	/// \parma int state
+	//----------------------------------------------------------------------------------------------------------------------
+	inline void state(int s) { m_state = s; }
 
-	///\brief get the sprite state
-	///\return int state
-	inline int getState()
-	{ return m_state; }
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief get the sprite state
+	/// \return int state
+	//----------------------------------------------------------------------------------------------------------------------
+	inline int getState() { return m_state; }
 
-	///\brief has the 'sprite' been killed, finished death animation cycle
-	///\return bool
-	inline bool isDead()
-	{ return m_deathComplete; }
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief has the 'sprite' been killed, finished death animation cycle
+	/// \return bool
+	//----------------------------------------------------------------------------------------------------------------------
+	inline bool isDead() { return m_deathComplete; }
 
-	///\brief get the sprite matrix
-	///\return math::Mat3
-	inline math::Mat3 matrix()
-	{ return m_matrix; }
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief get the sprite matrix
+	/// \return math::Mat3
+	//----------------------------------------------------------------------------------------------------------------------
+	inline math::Mat3 matrix() { return m_matrix; }
 
-	///\brief set the sprite matrix
-	///\prama math::Mat3
-	inline void matrix(math::Mat3 m)
-	{ m_matrix = m; }
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief set the sprite matrix
+	/// \parma math::Mat3
+	//----------------------------------------------------------------------------------------------------------------------
+	inline void matrix(math::Mat3 m) { m_matrix = m; }
 
 private:
 	Texture* m_texture; ///< sprite/surface texture

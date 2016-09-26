@@ -20,10 +20,21 @@ struct vec2
 {
 	float x; ///< x component
 	float y; ///< y component
-
+	
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief  sets all to zero
+	//----------------------------------------------------------------------------------------------------------------------
 	vec2() : x(0.0f), y(0.0f) {}; ///< sets all to zero
-	vec2(float i) : x(i), y(i) {}; ///< sets both x and y to the same value 
-	vec2(float a, float b) : x(a), y(b) {}; ///< sets x and y to differnet values
+
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief  sets both x and y to the same value 
+	//----------------------------------------------------------------------------------------------------------------------
+	vec2(float i) : x(i), y(i) {};
+
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief  sets x and y to differnet values
+	//----------------------------------------------------------------------------------------------------------------------
+	vec2(float a, float b) : x(a), y(b) {};
 
 	// operator overloading
 	inline const vec2 operator = (vec2& a) { x = a.x; y = a.y; return *this; }
@@ -36,7 +47,12 @@ struct vec2
 	inline vec2 operator * (vec2 a) const { return vec2(x * a.x, y * a.y); }
 };
 
-// add two vectors together
+
+//----------------------------------------------------------------------------------------------------------------------
+/// \brief  add two vectors together
+/// \param  vec2
+/// \param  vec2
+//----------------------------------------------------------------------------------------------------------------------
 inline vec2 operator + (vec2& a, vec2& b)
 {
 	vec2 temp(0.0f);
@@ -45,7 +61,11 @@ inline vec2 operator + (vec2& a, vec2& b)
 	return temp;
 }
 
-// subtract two vectors
+//----------------------------------------------------------------------------------------------------------------------
+/// \brief  subtract two vectors
+/// \param  vec2
+/// \param  vec2
+//----------------------------------------------------------------------------------------------------------------------
 inline vec2 operator - (vec2& a, vec2& b)
 {
 	vec2 temp(0.0f);
@@ -54,7 +74,11 @@ inline vec2 operator - (vec2& a, vec2& b)
 	return temp;
 }
 
-// multiplies vector by float (scalar)
+//----------------------------------------------------------------------------------------------------------------------
+/// \brief multiplies vector by float (scalar)
+/// \param  vec2
+/// \param  float
+//----------------------------------------------------------------------------------------------------------------------
 inline vec2 operator * (vec2& a, float s)
 {
 	vec2 temp(0.0f);
@@ -63,7 +87,11 @@ inline vec2 operator * (vec2& a, float s)
 	return temp;
 }
 
-// multiplies float (scalar) by vector
+//----------------------------------------------------------------------------------------------------------------------
+/// \brief multiplies float (scalar) by vector
+/// \param  float
+/// \param  vec2
+//----------------------------------------------------------------------------------------------------------------------
 inline vec2 operator * (float s, vec2& a)
 {
 	vec2 temp(0.0f);
@@ -72,7 +100,11 @@ inline vec2 operator * (float s, vec2& a)
 	return temp;
 }
 
-// divides vector by float (scalar)
+//----------------------------------------------------------------------------------------------------------------------
+/// \brief divides vector by float (scalar)
+/// \param  vec2
+/// \param  float
+//----------------------------------------------------------------------------------------------------------------------
 inline vec2 operator / (vec2& a, float s)
 {
 	vec2 temp(0.0f);
@@ -81,13 +113,23 @@ inline vec2 operator / (vec2& a, float s)
 	return temp;
 }
 
-// dot product of two vectors, if you enter the same vector for both parameters you will get the squared length
+//----------------------------------------------------------------------------------------------------------------------
+/// \brief dot product of two vectors, if you enter the same vector for both parameters you will get the squared length
+/// \param  vec2
+/// \param  vec2
+//----------------------------------------------------------------------------------------------------------------------
 inline float dot(const vec2& a, const vec2& b) { return (a.x * b.x) + (a.y * b.y); }
 
-// the length of a vector
+//----------------------------------------------------------------------------------------------------------------------
+/// \brief the length of a vector
+/// \param  vec2
+//----------------------------------------------------------------------------------------------------------------------
 inline float length(const vec2& a) { return std::sqrt(dot(a, a)); }
 
-// normalize the vector to a unit length
+//----------------------------------------------------------------------------------------------------------------------
+/// \brief normalize the vector to a unit length
+/// \param  vec2
+//----------------------------------------------------------------------------------------------------------------------
 inline vec2 normalize(vec2& a)
 {
 	// get the length of the vector

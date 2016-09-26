@@ -29,7 +29,10 @@ struct Mat3
 	friend vec3 rotate(Mat3& m, vec3 a);
 	friend vec3 transform(Mat3& m, vec3 a);
 
-	// rotate the matrix on X
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief rotate the matrix on X
+	/// \parma float angle
+	//----------------------------------------------------------------------------------------------------------------------
 	void rotateX(float angle)
 	{
 		float ca = std::cosf(angle);
@@ -40,7 +43,10 @@ struct Mat3
 		w = vec3();
 	}
 
-	// rotate the matrix on Y
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief rotate the matrix on Y
+	/// \parma float angle
+	//----------------------------------------------------------------------------------------------------------------------
 	void rotateY(float angle)
 	{
 		float ca = std::cosf(angle);
@@ -51,7 +57,10 @@ struct Mat3
 		w = vec3();
 	}
 
-	// rotate the matrix on Z
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief rotate the matrix on Z
+	/// \parma float angle
+	//----------------------------------------------------------------------------------------------------------------------
 	void rotateZ(float angle)
 	{
 		float ca = std::cosf(angle);
@@ -62,13 +71,15 @@ struct Mat3
 		w = vec3();
 	}
 
-	// based upon http://stackoverflow.com/questions/11557540/frustum-and-perspective-matrices
-	/// \prama float left co-ordinate of frustum
-	/// \prama float right co-ordinate of frustum
-	/// \prama float bottom co-ordinate of frustum
-	/// \prama float top co-ordinate of frustum
-	/// \prama float near viewing plane
-	/// \prama float far viewing plane
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief based upon http://stackoverflow.com/questions/11557540/frustum-and-perspective-matrices
+	/// \parma float left co-ordinate of frustum
+	/// \parma float right co-ordinate of frustum
+	/// \parma float bottom co-ordinate of frustum
+	/// \parma float top co-ordinate of frustum
+	/// \parma float near viewing plane
+	/// \parma float far viewing plane
+	//----------------------------------------------------------------------------------------------------------------------
 	void rightHandFrustum(float l, float r, float b, float t, float planeNear, float planeFar)
 	{
 		// declear some vectors
@@ -85,10 +96,12 @@ struct Mat3
 		w = Z * (2.0f * planeFar * planeNear / (planeNear - planeFar));
 	}
 
-	/// \prama float field of view angle (radians)
-	/// \prama float aspect ratio of window
-	/// \prama float near viewing plane
-	/// \prama float far viewing plane
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \parma float field of view angle (radians)
+	/// \parma float aspect ratio of window
+	/// \parma float near viewing plane
+	/// \parma float far viewing plane
+	//----------------------------------------------------------------------------------------------------------------------
 	void rightHandPerspective(float angle, float aRatio, float nearPlane, float farPlane)
 	{
 		// compute near plane rectangual boundary (i.e width and height)
@@ -97,13 +110,16 @@ struct Mat3
 		const float left = -right; ///< negate right
 		const float top = scale;
 		const float bottom = -top; ///< negate top
+
 		// compute the frustum
 		rightHandFrustum(left, right, bottom, top, nearPlane, farPlane);
 	}
 
-	// multiply two 4x4 matrix together, this will transform the child martix to world co-ordinates.
-	/// \prama Mat3 parent matrix
-	/// \prama Mat3 child martix
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief multiply two 4x4 matrix together, this will transform the child martix to world co-ordinates.
+	/// \parma Mat3 parent matrix
+	/// \parma Mat3 child martix
+	//----------------------------------------------------------------------------------------------------------------------
 	void multiplyMatrix(const Mat3& p, const Mat3& c)
 	{
 		x.x = p.x.x * c.x.x;
@@ -172,6 +188,10 @@ struct Mat3
 		w.w += p.w.w * c.w.w;
 	}
 
+	//----------------------------------------------------------------------------------------------------------------------
+	/// \brief set matrix as an array
+	/// \parma float 
+	//----------------------------------------------------------------------------------------------------------------------
 	void matrixAsArray(float mvpArray[])
 	{
 		mvpArray[0] = x.x;
@@ -193,7 +213,11 @@ struct Mat3
 	}
 };
 
-// rotate vec3 by Mat3 
+//----------------------------------------------------------------------------------------------------------------------
+/// \brief rotate vec3 by Mat3 
+/// \parma Mat3
+/// \parma vec3
+//----------------------------------------------------------------------------------------------------------------------
 inline vec3 rotateMat3(Mat3& m, vec3 v)
 {
 	vec3 temp = m.x * v.x;
@@ -202,10 +226,18 @@ inline vec3 rotateMat3(Mat3& m, vec3 v)
 	return temp;
 }
 
-/// transform vec3 (point) by Mat3 
+//----------------------------------------------------------------------------------------------------------------------
+/// \brief transform vec3 (point) by Mat3 
+/// \parma Mat3
+/// \parma vec3
+//----------------------------------------------------------------------------------------------------------------------
 inline vec3 transformMat3(Mat3& m, vec3 v) { return rotateMat3(m, v) + m.w; }
 
-// multiplies child and parent Mat3, the child martix is turned into world co-ordinates
+//----------------------------------------------------------------------------------------------------------------------
+/// \brief multiplies child and parent Mat3, the child martix is turned into world co-ordinates
+/// \parma Mat3
+/// \parma Mat3
+//----------------------------------------------------------------------------------------------------------------------
 inline Mat3 operator * (Mat3& c, Mat3& p)
 {
 	Mat3 temp;
@@ -216,7 +248,11 @@ inline Mat3 operator * (Mat3& c, Mat3& p)
 	return temp;
 }
 
-// rotate vec2 by the matrix
+//----------------------------------------------------------------------------------------------------------------------
+/// \brief rotate vec2 by the matrix
+/// \parma Mat3
+/// \parma vec3
+//----------------------------------------------------------------------------------------------------------------------
 inline vec3 rotate(Mat3& m, vec3 a)
 {
 	vec3 t = m.x * a.x;
@@ -226,7 +262,10 @@ inline vec3 rotate(Mat3& m, vec3 a)
 }
 
 
-// invert the matrix
+//----------------------------------------------------------------------------------------------------------------------
+/// \brief invert the matrix
+/// \parma Mat3
+//----------------------------------------------------------------------------------------------------------------------
 inline Mat3 inverse(const Mat3& m)
 {
 	const float xSq = 1.0f / dot(m.x, m.x);
@@ -246,8 +285,16 @@ inline Mat3 inverse(const Mat3& m)
 	return invert;
 }
 
+//----------------------------------------------------------------------------------------------------------------------
+/// \brief sets the w.w component to 1
+/// \parma Mat3
+//----------------------------------------------------------------------------------------------------------------------
 inline void addW(Mat3& matrix) { matrix.w.w = 1; }
 
+//----------------------------------------------------------------------------------------------------------------------
+/// \brief sets the w.w component to 0
+/// \parma Mat3
+//----------------------------------------------------------------------------------------------------------------------
 inline void removeW(Mat3& matrix) { matrix.w.w = 0; }
 
 }; /// end of namespace
