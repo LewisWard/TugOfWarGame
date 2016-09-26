@@ -1,7 +1,7 @@
 # Tug Of War README #
 © 2015 - 2016 Lewis Ward. All rights reserved.
 
-A small game I created in SDL for a University project. For more details go to [http://www.lewis-ward.com/tog-of-war.html](Link URL)
+A small game I created in SDL for a University project. For more details go to [http://www.lewis-ward.com/tug-of-war.html](Link URL)
 
 ### Game instructions ###
 
@@ -15,6 +15,8 @@ Objective : Destroy enemy base
 * Bases will show their health in the console when they are at 75%, 50% and 25% health.
 
 This can be accessed in-game via the main menu.
+
+You will need to be able to see both the game window and the console, sometimes the console will appear behind the window.
 
 ### How do I get set up? ###
 
