@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="include\gl">
+      <UniqueIdentifier>{fb14b7c4-a3e0-4de5-90a4-8351d4850ba9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gl">
+      <UniqueIdentifier>{49abad4e-8c79-4be7-8b28-e1cb888e06c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{4b524d8e-3032-4b50-b24d-388c991ca2d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\math">
+      <UniqueIdentifier>{e5653a79-0c5f-494e-b738-4a37620473f8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Window.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Events.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\glew.c">
+      <Filter>src\gl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Texture.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Program.cpp">
+      <Filter>src\gl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Shader.cpp">
+      <Filter>src\gl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mesh.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menu.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Button.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sprite.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Unit.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Building.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sound.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Window.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Events.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gl\glew.h">
+      <Filter>include\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gl\wglew.h">
+      <Filter>include\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Texture.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gl\Program.h">
+      <Filter>include\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gl\Shader.h">
+      <Filter>include\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Mesh.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vec3.h">
+      <Filter>include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vec2.h">
+      <Filter>include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Mat3.h">
+      <Filter>include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Mat2.h">
+      <Filter>include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Button.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Menu.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Sprite.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Unit.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Building.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Sound.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\menu.pix.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\menu.vtx.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\terrain.pix.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\terrain.vtx.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\sprite.pix.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\sprite.vtx.glsl">
+      <Filter>shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>

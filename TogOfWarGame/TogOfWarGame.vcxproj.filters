@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\Building.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Button.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Events.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menu.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mesh.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sound.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sprite.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Texture.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Unit.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Window.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\glew.c">
+      <Filter>src\gl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Shader.cpp">
+      <Filter>src\gl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Program.cpp">
+      <Filter>src\gl</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Building.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Button.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Events.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Menu.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Mesh.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Sound.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Sprite.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Texture.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Unit.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Window.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gl\wglew.h">
+      <Filter>include\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gl\glew.h">
+      <Filter>include\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gl\Program.h">
+      <Filter>include\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gl\Shader.h">
+      <Filter>include\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Mat2.h">
+      <Filter>include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Mat3.h">
+      <Filter>include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vec2.h">
+      <Filter>include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vec3.h">
+      <Filter>include\math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\terrain.vtx.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\terrain.pix.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\sprite.vtx.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\sprite.pix.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\menu.pix.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\menu.vtx.glsl">
+      <Filter>shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{ffbcabdd-a131-4f31-8af3-44e6008a4ad9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gl">
+      <UniqueIdentifier>{48e5d9fb-4831-49ec-a9f1-93962b1a46b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{692cf3d3-9966-41f7-8b77-996082dace49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{7c5b4820-6622-4738-b204-66f3ddfa1904}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\gl">
+      <UniqueIdentifier>{4c1e90f4-9a1f-4853-a91a-9d9973bcd482}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\math">
+      <UniqueIdentifier>{59492726-1ec2-4f5e-b31e-ccd2f9bf50fc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
