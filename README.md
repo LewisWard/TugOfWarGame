@@ -1,7 +1,7 @@
 # Tug Of War README #
 © 2015 - 2016 Lewis Ward. All rights reserved.
 
-A small game I created in SDL for a University project. For more details go to [http://www.lewis-ward.com/tug-of-war.html](Link URL)
+A small game I created in SDL for a University project. For more details go to [www.lewis-ward.com/tug-of-war](http://www.lewis-ward.com/tug-of-war.html)
 
 ### Game instructions ###
 
@@ -25,4 +25,4 @@ Some Visual Studio files have been included in the project, run "TugOfWarGame.sl
 
 ### Who do I talk to? ###
 
-Lewis Ward, you can send me a message from my website: [http://www.lewis-ward.com/contact.html](Link URL)
+Lewis Ward, you can send me a message from my website: [www.lewis-ward.com/contact](http://www.lewis-ward.com/contact.html)
